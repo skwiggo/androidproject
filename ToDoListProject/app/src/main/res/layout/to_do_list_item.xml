@@ -9,21 +9,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello"
-        android:textSize="20sp" />
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/task_delete"
         android:onClick="deleteTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="290dp"
         android:text="Delete" />
 
     <CheckBox
         android:id="@+id/task_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="220dp"
+        android:layout_marginLeft="210dp"
         android:text="Done" />
 
 </RelativeLayout>
