@@ -10,6 +10,7 @@ import android.view.MenuItem;
  * Created by user on 05/09/2016.
  */
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
