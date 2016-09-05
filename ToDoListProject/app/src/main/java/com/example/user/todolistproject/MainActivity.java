@@ -10,9 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,8 +22,8 @@ import java.util.ArrayList;
  * Created by user on 05/09/2016.
  */
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
 
+    private static final String TAG = "MainActivity";
     private ArrayAdapter mAdapter;
     private TaskDBHelper mHelper;
     private ListView mTaskListView;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mHelper = new TaskDBHelper(this);
         mTaskListView = (ListView) findViewById(R.id.list_todo);
+        updateUI();
     }
 
     @Override
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 final EditText taskEditText = new EditText(this);
                 AlertDialog dialog = new AlertDialog.Builder(this)
                         .setTitle("Add a new task")
-                        .setMessage("What do you want to do next?")
+                        .setMessage("Add an item to the list.")
                         .setView(taskEditText)
                         .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                             @Override
@@ -62,16 +65,30 @@ public class MainActivity extends AppCompatActivity {
                                         values,
                                         SQLiteDatabase.CONFLICT_REPLACE);
                                 db.close();
+                                updateUI();
                             }
                         })
                         .setNegativeButton("Cancel", null)
                         .create();
                 dialog.show();
+                updateUI();
                 return true;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void deleteTask(View view) {
+        View parent = (View) view.getParent();
+        TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
+        String task = String.valueOf(taskTextView.getText());
+        SQLiteDatabase db = mHelper.getWritableDatabase();
+        db.delete(TaskContract.TaskEntry.TABLE,
+                TaskContract.TaskEntry.COL_TASK_TITLE + " = ?",
+                new String[]{task});
+        db.close();
+        updateUI();
     }
 
     private void updateUI() {
