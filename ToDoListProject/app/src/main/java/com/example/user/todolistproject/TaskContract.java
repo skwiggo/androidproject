@@ -14,6 +14,12 @@ public class TaskContract {
         public static final String TABLE = "tasks";
         public static final String COL_TASK_TITLE = "title";
     }
+
+    public class DataEntry implements BaseColumns {
+        public static final String TABLE = "data";
+        public static final String COL_DATA_TITLE = "title";
+        public static final Integer TASK_ID = "task_id";
+    }
 }
 
 
