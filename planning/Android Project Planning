@@ -1,0 +1,44 @@
+Android Project Planning:
+
+To Do List.
+
+MVP:
+Show task list.
+Show individual tasks.
+Mark tasks as complete.
+
+Possible extensions:
+Audio files when tasks marked complete.
+Check tasks through devices calendar - due dates.
+Prioritize/categorize tasks.
+
+Program plan:
+Data needs to be persisted - either by using SharedPreferences within Android Studio or SQLite
+Main data type will be strings which will then be persisted by the app by one of the above.
+
+File structure (FOR MVP):
+
+Java classes:
+
+MainActivity - main Java class
+EntryActivity - class to be instantiated for each to do list entry.
+SharedPreferences - Shared Preferences class for persisting data.
+OR
+SQLiteClass - same as above
+
+Android XML files:
+
+LAYOUT FILES:
+activity_main - main XML file displaying the simple entries with add, edit and delete buttons for each entry. Also a checkbox to mark off if an entry has been completed. 
+activity_entry - XML file with more detailed descriptions for each to do list entry that has been created.
+
+
+
+
+
+
+
+
+
+
+
