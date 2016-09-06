@@ -15,10 +15,10 @@ public class TaskContract {
         public static final String COL_TASK_TITLE = "title";
     }
 
-    public class DataEntry implements BaseColumns {
+    public class FullTaskEntry implements BaseColumns {
         public static final String TABLE = "data";
-        public static final String COL_DATA_TITLE = "title";
-        public static final String COL_DATA_ID = "id";
+        public static final String COL_FULL_TITLE = "title";
+        public static final String COL_FULL_ID = "id";
     }
 }
 

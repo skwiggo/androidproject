@@ -1,8 +1,11 @@
 package com.example.user.todolistproject;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -11,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -28,15 +32,22 @@ public class MainActivity extends AppCompatActivity {
     private TaskDBHelper mHelper;
     private ListView mTaskListView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mHelper = new TaskDBHelper(this);
         mTaskListView = (ListView) findViewById(R.id.list_todo);
+        mTaskListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent myIntent = new Intent(getApplicationContext(), ListActivity.class);
+                startActivity(myIntent);
+            }
+        });
         updateUI();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
