@@ -20,7 +20,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
                 TaskContract.TaskEntry.COL_TASK_TITLE + " TEXT NOT NULL);";
 
         String createTable2 = "CREATE TABLE " + TaskContract.FullTaskEntry.TABLE + " ( " +
-                TaskContract.FullTaskEntry.COL_FULL_TITLE + " TEXT NOT NULL" +
+                TaskContract.FullTaskEntry.COL_FULL_TASK_TITLE + " TEXT NOT NULL" +
                 TaskContract.FullTaskEntry.COL_FULL_ID + "INTEGER references _ID)";
 
         db.execSQL(createTable);

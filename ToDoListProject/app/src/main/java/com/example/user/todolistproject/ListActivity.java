@@ -34,22 +34,18 @@ public class ListActivity extends AppCompatActivity {
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String task = String.valueOf(mTextToSave.getText());
+                String data = String.valueOf(mTextToSave.getText());
                 SQLiteDatabase db = mHelper.getWritableDatabase();
                 ContentValues values = new ContentValues();
-                values.put(TaskContract.FullTaskEntry.COL_FULL_TITLE, task);
+                values.put(TaskContract.FullTaskEntry.COL_FULL_TASK_TITLE, data);
                 db.insertWithOnConflict(TaskContract.FullTaskEntry.TABLE,
                         null,
                         values,
                         SQLiteDatabase.CONFLICT_REPLACE);
                 db.close();
             }
-        });{}
+        });
     }
-
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
