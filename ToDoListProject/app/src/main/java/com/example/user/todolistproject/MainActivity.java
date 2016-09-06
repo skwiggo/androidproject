@@ -57,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_add_task:
                 final EditText taskEditText = new EditText(this);
                 AlertDialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("Add a new song idea:")
-                        .setMessage("Add any info here including bpm info, lyrics etc.")
+                        .setTitle("Add a new track entry to the application:")
                         .setView(taskEditText)
                         .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                             @Override

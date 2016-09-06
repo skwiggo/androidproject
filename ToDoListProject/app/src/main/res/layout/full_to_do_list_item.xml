@@ -19,7 +19,7 @@
         android:text="..."/>
 
     <Button
-        android:id="@+id/save_text"
+        android:id="@+id/save_button"
         android:text="Save"
         android:layout_marginTop="300dp"
         android:layout_marginLeft="280dp"
