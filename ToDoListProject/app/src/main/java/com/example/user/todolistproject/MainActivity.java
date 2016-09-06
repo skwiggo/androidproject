@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private ArrayAdapter mAdapter;
     private TaskDBHelper mHelper;
-    private ListView mTaskListView;
+    ListView mTaskListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_add_task:
                 final EditText taskEditText = new EditText(this);
                 AlertDialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("Add a new task:")
-                        .setMessage("Add an item to the list.")
+                        .setTitle("Add a new song idea:")
+                        .setMessage("Add any info here including bpm info, lyrics etc.")
                         .setView(taskEditText)
                         .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                             @Override

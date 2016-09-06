@@ -21,7 +21,8 @@
 
         <activity
             android:name=".ListActivity"
-            android:label="SignaltoNoise">
+            android:label="SignaltoNoise"
+            android:parentActivityName=".MainActivity">
         </activity>
 
     </application>

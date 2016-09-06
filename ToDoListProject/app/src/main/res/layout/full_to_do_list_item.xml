@@ -29,4 +29,31 @@
         android:layout_height="wrap_content"
         />
 
+    <CheckBox
+        android:id="@+id/lyrics"
+        android:text="Lyrics"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="280dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <CheckBox
+        android:id="@+id/lyrics"
+        android:text="Track Info"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="280dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <CheckBox
+        android:id="@+id/lyrics"
+        android:text="BPM"
+        android:layout_marginTop="440dp"
+        android:layout_marginLeft="280dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
 </RelativeLayout>
