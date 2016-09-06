@@ -58,6 +58,5 @@ public class ListActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-
-    }
+}
 
