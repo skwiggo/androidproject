@@ -15,8 +15,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:textSize="20dp"
-        android:text="..."/>
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/text_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/save_button"

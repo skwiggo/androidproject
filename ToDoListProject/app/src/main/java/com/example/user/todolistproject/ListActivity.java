@@ -35,6 +35,7 @@ public class ListActivity extends AppCompatActivity {
         mTextToSave = (EditText) findViewById(R.id.text_to_save);
         mSaveButton = (Button) findViewById(R.id.save_button);
         mSavedText = (TextView) findViewById(R.id.saved_text);
+        mTextList = (ListView) findViewById(R.id.text_list);
         mHelper = new TaskDBHelper(this);
 
         mSaveButton.setOnClickListener(new View.OnClickListener() {
@@ -49,8 +50,37 @@ public class ListActivity extends AppCompatActivity {
                         values,
                         SQLiteDatabase.CONFLICT_REPLACE);
                 db.close();
+                mSavedText.setText(data);
+                updateUI();
+
             }
         });
+    }
+
+    private void updateUI() {
+        ArrayList<String> taskList = new ArrayList<>();
+        SQLiteDatabase db = mHelper.getReadableDatabase();
+        Cursor cursor = db.query(TaskContract.FullTaskEntry.TABLE,
+                new String[]{TaskContract.FullTaskEntry._ID, TaskContract.FullTaskEntry.COL_FULL_TASK_TITLE},
+                null, null, null, null, null);
+        while (cursor.moveToNext()) {
+            int idx = cursor.getColumnIndex(TaskContract.FullTaskEntry.COL_FULL_TASK_TITLE);
+            taskList.add(cursor.getString(idx));
+        }
+
+        if (mAdapter == null) {
+            mAdapter = new ArrayAdapter<>(this,
+                    R.layout.full_to_do_list_item,
+                    R.id.saved_text,
+                    taskList);
+            mTextList.setAdapter(mAdapter);
+        } else {
+            mAdapter.clear();
+            mAdapter.addAll(taskList);
+            mAdapter.notifyDataSetChanged();
+        }
+        cursor.close();
+        db.close();
     }
 
     @Override
