@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         if (mAdapter == null) {
             mAdapter = new ArrayAdapter<>(this,
                     R.layout.to_do_list_item,
-                    R.id.task_title,
+                    R.id.saved_text,
                     taskList);
             mTaskListView.setAdapter(mAdapter);
         } else {

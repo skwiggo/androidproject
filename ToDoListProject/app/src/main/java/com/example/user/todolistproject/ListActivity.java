@@ -25,6 +25,7 @@ public class ListActivity extends AppCompatActivity {
     TextView mSavedText;
     TaskDBHelper mHelper;
     ArrayAdapter mAdapter;
+    ListView mTextList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

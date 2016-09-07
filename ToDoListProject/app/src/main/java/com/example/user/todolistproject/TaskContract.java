@@ -18,7 +18,7 @@ public class TaskContract {
     public class FullTaskEntry implements BaseColumns {
         public static final String TABLE = "data";
         public static final String COL_FULL_TASK_TITLE = "title";
-        public static final String COL_FULL_TASK_ID = "id";
+        public static final String COL_FULL_TASK_ID = "full_id";
     }
 }
 
