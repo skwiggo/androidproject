@@ -52,33 +52,7 @@ public class ListActivity extends AppCompatActivity {
             }
         });
     }
-
-//    private void updateUI() {
-//        ArrayList<String> taskList = new ArrayList<>();
-//        SQLiteDatabase db = mHelper.getReadableDatabase();
-//        Cursor cursor = db.query(TaskContract.FullTaskEntry.TABLE,
-//                new String[]{TaskContract.FullTaskEntry._ID, TaskContract.FullTaskEntry.COL_FULL_TASK_TITLE},
-//                null, null, null, null, null);
-//        while (cursor.moveToNext()) {
-//            int idx = cursor.getColumnIndex(TaskContract.FullTaskEntry.COL_FULL_TASK_TITLE);
-//            taskList.add(cursor.getString(idx));
-//        }
-//
-//        if (mAdapter == null) {
-//            mAdapter = new ArrayAdapter<>(this,
-//                    R.layout.full_to_do_list_item,
-//                    R.id.saved_text,
-//                    taskList);
-//            mTextList.setAdapter(mAdapter);
-//        } else {
-//            mAdapter.clear();
-//            mAdapter.addAll(taskList);
-//            mAdapter.notifyDataSetChanged();
-//        }
-//        cursor.close();
-//        db.close();
-//    }
-
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.audio_menu, menu);
