@@ -36,6 +36,11 @@ public class ListActivity extends AppCompatActivity {
         mSavedText = (TextView) findViewById(R.id.saved_text);
         mHelper = new TaskDBHelper(this);
 
+        SQLiteDatabase db = mHelper.getReadableDatabase();
+
+        String sqlStatement = "SELECT * FROM" + TaskContract.FullTaskEntry.TABLE + "";
+        db.execSQL(sqlStatement);
+
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +57,7 @@ public class ListActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.audio_menu, menu);
