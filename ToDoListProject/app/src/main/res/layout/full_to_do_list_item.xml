@@ -15,7 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        />
 
     <ListView
         android:id="@+id/list_text"
@@ -32,6 +33,7 @@
         android:layout_marginLeft="280dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#2F4F4F"
         />
 
     <CheckBox

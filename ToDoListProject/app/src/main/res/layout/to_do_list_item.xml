@@ -20,14 +20,16 @@
         android:layout_marginLeft="290dp"
         android:text="Delete"
         android:textSize="14dp"
-        android:focusable="false"/>
+        android:focusable="false"
+        android:background="#2F4F4F"/>
 
     <CheckBox
         android:id="@+id/task_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
+        android:layout_marginLeft="220dp"
         android:textSize="12dp"
+        android:text="Done"
         android:focusable="false"/>
 
 </RelativeLayout>
