@@ -25,7 +25,6 @@ public class ListActivity extends AppCompatActivity {
     TextView mSavedText;
     TaskDBHelper mHelper;
     ArrayAdapter mAdapter;
-    ListView mTextList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class ListActivity extends AppCompatActivity {
         mTextToSave = (EditText) findViewById(R.id.text_to_save);
         mSaveButton = (Button) findViewById(R.id.save_button);
         mSavedText = (TextView) findViewById(R.id.saved_text);
-        mTextList = (ListView) findViewById(R.id.text_list);
         mHelper = new TaskDBHelper(this);
 
         mSaveButton.setOnClickListener(new View.OnClickListener() {
