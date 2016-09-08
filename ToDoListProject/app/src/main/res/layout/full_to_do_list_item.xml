@@ -7,6 +7,7 @@
         android:id="@+id/text_to_save"
         android:hint="..."
         android:textSize="20dp"
+        android:textColor="#F0F8FF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -43,6 +44,7 @@
         android:layout_marginLeft="280dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#F0F8FF"
         />
 
     <CheckBox
@@ -52,6 +54,7 @@
         android:layout_marginLeft="280dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#F0F8FF"
         />
 
     <CheckBox
@@ -61,6 +64,7 @@
         android:layout_marginLeft="280dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#F0F8FF"
         />
 
 </RelativeLayout>
