@@ -1,0 +1,1 @@
+A music producers or musicians scrapbook/to do list app written in Android Studio using SQLite for data persistence. 
